@@ -14,30 +14,45 @@ Live IPL cricket scores on your Claude Code status line.
 
 ## Install
 
-### As a Claude Code plugin
+### Option 1: Plugin marketplace (recommended)
 
 ```bash
-claude plugin install claude-ipl
+# Add the marketplace
+/plugin marketplace add Barath19/claude-plugins-marketplace
+
+# Install the plugin
+/plugin install claude-ipl@barath19-plugins
 ```
 
-Or test locally:
+Restart Claude Code and you're done.
+
+### Option 2: Clone and load locally
 
 ```bash
-claude --plugin-dir /path/to/claude-ipl
+git clone https://github.com/Barath19/claude-ipl.git
+claude --plugin-dir ./claude-ipl
 ```
 
-### Manual setup
+### Option 3: Manual setup
 
-Add to `~/.claude/settings.json`:
+1. Clone the repo:
+
+```bash
+git clone https://github.com/Barath19/claude-ipl.git ~/.claude/claude-ipl
+```
+
+2. Add to `~/.claude/settings.json`:
 
 ```json
 {
   "statusLine": {
     "type": "command",
-    "command": "/path/to/claude-ipl/bin/statusline.sh"
+    "command": "~/.claude/claude-ipl/bin/statusline.sh"
   }
 }
 ```
+
+3. Restart Claude Code.
 
 ## Requirements
 
@@ -59,20 +74,6 @@ sudo apt install jq
 - Prioritizes live matches over upcoming/completed ones
 - Shows current batsmen at the crease with runs(balls) during live matches
 - Works on macOS and Linux
-
-## Plugin structure
-
-```
-claude-ipl/
-├── .claude-plugin/
-│   └── plugin.json      # Plugin manifest
-├── bin/
-│   └── statusline.sh    # Status line script
-├── settings.json        # Auto-configures statusLine
-├── package.json
-├── README.md
-└── LICENSE
-```
 
 ## License
 
