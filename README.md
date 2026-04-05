@@ -14,8 +14,6 @@ Live IPL cricket scores on your Claude Code status line.
 
 ## Install
 
-### Option 1: Plugin marketplace (recommended)
-
 ```bash
 # Add the marketplace
 /plugin marketplace add Barath19/claude-plugins-marketplace
@@ -24,35 +22,7 @@ Live IPL cricket scores on your Claude Code status line.
 /plugin install claude-ipl@barath19-plugins
 ```
 
-Restart Claude Code and you're done.
-
-### Option 2: Clone and load locally
-
-```bash
-git clone https://github.com/Barath19/claude-ipl.git
-claude --plugin-dir ./claude-ipl
-```
-
-### Option 3: Manual setup
-
-1. Clone the repo:
-
-```bash
-git clone https://github.com/Barath19/claude-ipl.git ~/.claude/claude-ipl
-```
-
-2. Add to `~/.claude/settings.json`:
-
-```json
-{
-  "statusLine": {
-    "type": "command",
-    "command": "~/.claude/claude-ipl/bin/statusline.sh"
-  }
-}
-```
-
-3. Restart Claude Code.
+Restart Claude Code. The status line configures itself automatically on first session.
 
 ## Requirements
 

@@ -1,6 +1,6 @@
 {
   "name": "claude-ipl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Live IPL cricket scores on your Claude Code status line with batsmen at crease",
   "author": {
     "name": "Barath19",
@@ -8,5 +8,6 @@
   },
   "repository": "https://github.com/Barath19/claude-ipl",
   "license": "MIT",
-  "keywords": ["ipl", "cricket", "live-score", "statusline"]
+  "keywords": ["ipl", "cricket", "live-score", "statusline"],
+  "hooks": "./hooks/hooks.json"
 }
