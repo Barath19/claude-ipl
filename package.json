@@ -1,0 +1,27 @@
+{
+  "name": "claude-ipl",
+  "version": "1.0.0",
+  "description": "Live IPL cricket scores on your Claude Code status line",
+  "bin": {
+    "claude-ipl": "./bin/statusline.sh",
+    "claude-ipl-setup": "./bin/setup.sh"
+  },
+  "keywords": [
+    "claude-code",
+    "ipl",
+    "cricket",
+    "statusline",
+    "live-score"
+  ],
+  "author": "Bharath",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Barath19/claude-ipl.git"
+  },
+  "files": [
+    "bin/",
+    "README.md",
+    "LICENSE"
+  ]
+}
