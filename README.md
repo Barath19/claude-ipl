@@ -2,8 +2,6 @@
 
 Live IPL cricket scores on your Claude Code status line.
 
-![Status Line Example](https://img.shields.io/badge/IPL-LIVE:%20RCB%20250%2F3%20vs%20CSK%2058%2F3-red)
-
 ## What it shows
 
 - **Live matches**: Score, overs, and current batsmen at crease with `*` on striker
@@ -16,29 +14,27 @@ Live IPL cricket scores on your Claude Code status line.
 
 ## Install
 
-```bash
-npm install -g claude-ipl
-```
-
-## Setup
-
-Run the setup command to configure Claude Code:
+### As a Claude Code plugin
 
 ```bash
-claude-ipl-setup
+claude plugin install claude-ipl
 ```
 
-Then restart Claude Code.
+Or test locally:
+
+```bash
+claude --plugin-dir /path/to/claude-ipl
+```
 
 ### Manual setup
 
-Add this to `~/.claude/settings.json`:
+Add to `~/.claude/settings.json`:
 
 ```json
 {
   "statusLine": {
     "type": "command",
-    "command": "claude-ipl"
+    "command": "/path/to/claude-ipl/bin/statusline.sh"
   }
 }
 ```
@@ -61,8 +57,22 @@ sudo apt install jq
 - Fetches live scores from ESPN Cricinfo API
 - Caches results for 60 seconds to keep the status line fast
 - Prioritizes live matches over upcoming/completed ones
-- Shows current batsmen at the crease with their score(balls) during live matches
+- Shows current batsmen at the crease with runs(balls) during live matches
 - Works on macOS and Linux
+
+## Plugin structure
+
+```
+claude-ipl/
+├── .claude-plugin/
+│   └── plugin.json      # Plugin manifest
+├── bin/
+│   └── statusline.sh    # Status line script
+├── settings.json        # Auto-configures statusLine
+├── package.json
+├── README.md
+└── LICENSE
+```
 
 ## License
 
